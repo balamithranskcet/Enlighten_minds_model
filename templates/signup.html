@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Signup{% endblock %}
+{% block style %}<style>
+</style>{% endblock %}
+{% block script %}<script src="{% static "eye.js" %}"></script>
+<script src="{% static "passwordverify.js" %}"></script>{% endblock %}
+{% block content %}
+<form onsubmit="return checkPassword(this)" action="{% url 'signup' %}" method="POST">
+	                  {% csrf_token %}
+                    <div class="d-flex align-items-center mb-3 pb-1">
+                      <h1> <i class="fas fa-user-graduate " style="color: orangered; margin-right: 10px;"></i></h1>
+
+                      <span class="h1 fw-bold mb-0 mr-3">Enlighten Minds</span>
+                    </div>
+
+                    <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Create an account here</h5>
+                    <label class="form-label" >Name</label>
+
+                    <div class="form-outline mb-3">
+
+                      {{ form.first_name }}
+
+                    </div>
+
+                    <label class="form-label" >Email address</label>
+
+                    <div class="form-outline mb-3">
+                      {{ form.email}}
+
+                    </div>
+
+                    <label class="form-label" >Phone Number</label>
+
+                    <div class="form-outline mb-3">
+                      {{ form.Phone_number }}
+
+                    </div>
+
+                    <label class="form-label" >State</label>
+
+                    <div class="form-outline mb-3">
+                      {{ form.state }}
+
+                    </div>
+
+	                  <label class="form-label" >City</label>
+
+                    <div class="form-outline mb-3">
+                      {{ form.city }}
+
+                    </div>
+	<div>
+              <label for="password" class="mb-1">Password</label>
+		<div class="input-group mb-3">
+                {{ form.password1 }}
+                <button class="btn btn-dark eye" onclick="javascript:eyelistener(document.getElementById('password'),document.getElementById('open-eye'))" type="button" >
+                <i class="far fa-eye-slash" id="open-eye" ></i>
+                </button>
+		</div>
+	</div>
+                    <div>
+              <label for="retypepassword" class="mb-1">Confirm Password</label>
+
+              <div class="input-group mb-3">
+                {{ form.password2 }}
+	              <button class="btn btn-dark eye" onclick="javascript:eyelistener(document.getElementById('retypepassword'),document.getElementById('open-eye2'))" type="button" >
+                <i class="far fa-eye-slash" id="open-eye2" ></i>
+	              </button>
+              </div>
+            </div>
+
+                    <div class="pt-1 mb-3">
+                      <button type="submit" class="btn btn-dark btn-lg btn-block" >Sign Up</button>
+                    </div>
+
+                  </form>
+	<h6 class="mb-5 pb-lg-2" ><a style="text-decoration:none;color: #393f81;" href="{% url 'login' %}">I already have an account</a></h6>
+{% endblock %}

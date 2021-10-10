@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <title>Posts</title>
+    <style>
+        .wrapper{
+  background-color: #a4508b;
+background-image: linear-gradient(326deg, #a4508b 0%, #5f0a87 74%);
+
+    color: white;
+  width: 90%;
+  margin: 120px auto;
+  padding: 25px;
+  border-radius: 5px;
+  box-shadow: 0px 10px 15px rgba(0,0,0,0.1);
+}
+.wrapper header{
+  font-size: 30px;
+  font-weight: 600;
+}
+
+    </style>
+</head>
+
+<body class="bg-warning" style="background-color: #1fd1f9;
+background-image: linear-gradient(315deg, #1fd1f9 0%, #b621fe 74%);
+
+">
+
+  <div class= "container">
+        <a href="{% url 'postCreation'  %}" class="btn btn-dark btn-lg btn-block" >Create POST</a>
+  <div class="row">
+
+  <!--
+    <div class="col-md-8 mx-auto">
+  <div class="card bg-dark text-light mb-3 mt-5">
+
+    <div class="card-body ">
+
+                      <h1 class="card-title text-center mb-3">Title</h1>
+                      <h3 class="card-text p-5 text-center">
+                        Course Author Name
+                      </h3>
+
+                      <h3>Course Description</h3>
+
+                      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem sequi odio, repellendus nulla id quis itaque deleniti, quidem perspiciatis cumque officiis dolor rerum sint eius nisi ipsam numquam sit perferendis ullam iste. Perspiciatis similique dolorum odio excepturi inventore nihil ut dolore, voluptas rerum natus fuga officiis ad beatae dolor reprehenderit!</p>
+
+                      <h5>Total Amount = 6000</h5>
+
+                      <div class="d-flex flex-row align-items-start justify-content-between bd-highlight mb-1">
+                        <h5 class="m-2">Email : 20epci002@skcet.ac.in</h5>
+                        <h5 class="m-2">No of Contributors : 2</h5>
+
+                      </div>
+
+                      <div class="d-flex flex-row align-items-start justify-content-between bd-highlight mb-3">
+                        <h5 class="m-2">Phone Number : 9486131884</h5>
+                        <h5 class="m-2">No of Courses : 1</h5>
+
+                      </div>
+
+    </div>
+      </div>
+    </div>
+  -->
+
+{% for co in post %}
+<div class="wrapper">
+         <div class="card-body ">
+
+                      <h1 class="card-title text-center mb-3">{{ co.post_name }}</h1>
+                      <h3 class="card-text p-5 text-center">
+                        Author Name: {{ request.user }}
+                      </h3>
+
+                      <h3>Course Description</h3>
+
+                            <p>{{ co.post_description }}</p>
+                      <h5>Total Amount Gained (Donations)={{ co.post_balance_amount }}/{{ co.post_total_amount }}</h5>
+
+                      <div class="d-flex flex-row align-items-start justify-content-between bd-highlight mb-1">
+                        <h5 class="m-2">Email : {{ co.post_email }}</h5>
+                        <h5 class="m-2">No of Contributors : {{ co.post_total_contibutors }}</h5>
+
+                      </div>
+
+                      <div class="d-flex flex-row align-items-start justify-content-between bd-highlight mb-3">
+                        <h5 class="m-2">Phone Number : {{ co.post_contact_number }}</h5>
+                        <h5 class="m-2">No of Courses : {{ co.post_no_of_courses }}</h5>
+
+                      </div>
+
+</div>
+ </div>
+
+    {% endfor %}
+
+
+
+
+  </main>
+
+</body>
+</html>

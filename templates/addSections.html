@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Section Create</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body class="bg-warning">
+  <div class="container" id = 'main'>
+
+    <h1 class="text-center mt-4 mb-4">Upload your videos here</h1>
+    <div class="container-totvid">
+
+        <label class="mb-2" >Section Name</label>
+
+        <input type="text" name="Section_Name" class="form-control mb-3"  placeholder = "Enter the Section Name">
+
+        <label class="mb-2" >Section Number</label>
+        <input type="number" name="Section_Number" class="form-control mb-3"  placeholder = "Enter the Section Number">
+
+        <label class="mb-2" >Number of videos</label>
+
+        <input type="number" name="" class="form-control" id="noofvideo" placeholder = "Enter the total number of videos">
+
+        <button class="btn btn-primary mt-3" id="add-btn">Add Section</button>
+    </div>
+    <div id="main2">
+    </div>
+
+    <div class="d-flex">
+
+        <button  class="btn btn-primary m-3 " style="width: 50%; margin-right: 10px;">Publish</button>
+
+        <button class="btn btn-primary m-3 " style="width: 50%;">Save</button>
+
+    </div>
+
+
+</div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script>
+
+    var btn = document.getElementById("add-btn");
+    btn.addEventListener("click",addsection);
+
+    function addsection(e)
+    {
+      console.log("Clicked")
+
+      var container = document.createElement("div");
+      container.className = "container"
+
+
+
+      var row = document.createElement("div");
+      row.className = "row text-center g-4";
+
+      container.appendChild(row)
+
+      var col = document.createElement("div");
+      col.className = "col-md"
+
+      row.appendChild(col);
+
+      var card = document.createElement("div");
+      card.className = "card bg-dark text-light"
+
+      var card_body = document.createElement("div");
+      card_body.className = "card-body text-center"
+
+      card.appendChild(card_body);
+
+
+
+
+      var heading = document.createElement("h1");
+      heading.className = "card-body text-center";
+      heading.appendChild(document.createTextNode("C Programming"));
+
+      card.appendChild(heading);
+
+      var q1 = document.createElement("input");
+      q1.className = "form-control"
+      q1.placeholder = "Enter Topic"
+      q1.type = "text"
+      q1.name = "Enter_topic"
+
+      label1 = document.createElement("p");
+      label1.className = "m-2"
+      label1.appendChild(document.createTextNode("Enter the Topic"));
+
+      card.appendChild(label1)
+
+
+      card.appendChild(q1)
+
+      var q2 = document.createElement("input");
+      q2.className = "form-control"
+      q2.placeholder = "Video url"
+      q2.type = "text"
+      q2.name = "Video_url"
+
+      label2 = document.createElement("p");
+      label2.className = "m-2"
+      label2.appendChild(document.createTextNode("Enter the Title"));
+
+      card.appendChild(label2)
+
+
+      card.appendChild(q2)
+
+      var q3 = document.createElement("input");
+      q3.className = "form-control m-3"
+      q3.type = "file"
+      q3.name = "resources"
+
+      label3 = document.createElement("p");
+      label3.appendChild(document.createTextNode("Choose the video"));
+
+      card.appendChild(label3)
+
+
+      card.appendChild(q3)
+
+
+
+      row.appendChild(card)
+
+      console.log(container)
+
+      document.getElementById("main2").appendChild(container);
+
+    }
+
+
+
+
+
+  </script>
+</body>
+</html>

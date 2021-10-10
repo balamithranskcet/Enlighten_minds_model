@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% block title %}Apply For a Concession{% endblock %}
+
+{% block content %}
+ <form method="POST" action="">
+{% csrf_token %}
+                    <div class="d-flex align-items-center mb-3 pb-1">
+                      <h1> <i class="fas fa-user-graduate " style="color: orangered; margin-right: 10px;"></i></h1>
+
+                      <span class="h1 fw-bold mb-0 mr-3">Enlighten Minds</span>
+                    </div>
+
+
+
+                    <label class="form-label" >Educational Background</label>
+
+                     <div class="form-outline mb-3">
+                      <input name="educational_background" type="text" class="form-control form-control" required/>
+                    </div>
+
+
+                   <label class="form-label" >Annual Income</label>
+
+
+                    <div class="form-outline mb-3">
+                      <select name="annual_income" class="form-control" id="inputtype" required>
+                        <option selected>Choose your Annual Income</option>
+                        <option value="Less than 50,000">Less than 50,000</option>
+                        <option value="50,000 to 1,00,000">50,000 to 1,00,000</option>
+                        <option value="1,00,000 to 5,00,000">1,00,000 to 5,00,000</option>
+                        <option value="Above 5,00,000">Above 5,00,000</option>
+                      </select>
+
+                    </div>
+
+                    <label class="form-label" >Employment Status</label>
+
+                    <div class="form-outline mb-3">
+                      <input name="employment_status" type="text" class="form-control form-control" required/>
+
+                    </div>
+
+                    <label class="form-label" >How much u can afford to pay?</label>
+
+                    <div class="form-outline mb-3">
+                      <input name="students_affordable_money" type="number" class="form-control form-control" placeholder="Rs.per month" required/>
+
+                    </div>
+
+                    <label class="form-label" >If you have answered for above question, please help us understand why?</label>
+
+                    <div class="form-outline mb-3">
+                      <textarea name="students_affordable_money_reason" id="report" cols="20" rows="5" class="form-control mb-3" required ></textarea>
+
+                    </div>
+
+                    <label class="form-label" >Why are you applying for financial assitance?</label>
+
+                    <div class="form-outline mb-3">
+                      <textarea name="reson_for_applying" id="report" cols="20" rows="5" class="form-control mb-3" required></textarea>
+
+                    </div>
+
+                    <label class="form-label" >How will this course help you achieve your goals?</label>
+
+                    <div class="form-outline mb-3">
+                      <textarea name="goals_achieved_by_this_course" id="report" cols="20" rows="5" class="form-control mb-3" required></textarea>
+
+                    </div>
+
+
+                     <label class="form-label" >Upload your income certificate here (for verification)</label>
+
+                    <div class="form-outline mb-3">
+                      <input type="file" name="low_income_student_certificate" class="form-control form-control" required/>
+                    </div>
+
+                    <div class="pt-1 mb-3">
+
+                        <input type="submit" class="btn btn-dark btn-lg btn-block" value="Apply here">
+                    </div>
+
+                  </form>
+{% endblock %}

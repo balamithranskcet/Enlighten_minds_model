@@ -1,0 +1,51 @@
+
+
+header{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top:0; left: 0;
+  z-index: 1000;
+  padding:1.5rem 7%;
+  background: rebeccapurple;
+  box-shadow: 0 .1rem .3rem rgba(0,0,0,.3) ;
+    height: 100px;
+}
+
+header .logo{
+  color:#fff;
+  font-size: 2.5rem;
+  text-decoration: none;
+}
+
+header .navbar ul{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+}
+
+header .navbar ul li{
+  margin:0 1rem;
+}
+
+header .navbar ul li a{
+  font-size: 2rem;
+  color:#fff;
+  text-decoration: none;
+}
+
+header .navbar ul li a.active,
+header .navbar ul li a:hover{
+  color:#444;
+}
+
+
+header #menu{
+  font-size: 3rem;
+  color:#fff;
+  cursor: pointer;
+  display: none;
+}
